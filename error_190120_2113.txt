@@ -1,0 +1,91 @@
++ echo -e '\033[0;32mFizz is installed \033[0m'
++ cd /home/hail/mvfst/mvfst/_build
++ cd /home/hail/mvfst/mvfst/_build/build
++ cmake -DCMAKE_PREFIX_PATH=/home/hail/mvfst/mvfst/_build/deps -DCMAKE_INSTALL_PREFIX=/home/hail/mvfst/mvfst/_build -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_TESTS=On ../..
++ make -j 8
+/home/hail/mvfst/mvfst/quic/server/handshake/test/ServerHandshakeTest.cpp: In member function ‘void quic::test::ServerHandshakeTest::clientServerRound()’:
+/home/hail/mvfst/mvfst/quic/server/handshake/test/ServerHandshakeTest.cpp:179:29: warning: ‘bool folly::EventBase::loopIgnoreKeepAlive()’ is deprecated: This should only be used in legacy unit tests [-Wdeprecated-declarations]
+     evb.loopIgnoreKeepAlive();
+                             ^
+In file included from /home/hail/mvfst/mvfst/_build/deps/include/folly/io/async/AsyncSocketBase.h:20:0,
+                 from /home/hail/mvfst/mvfst/_build/deps/include/folly/io/async/AsyncTransport.h:22,
+                 from /home/hail/mvfst/mvfst/_build/deps/include/fizz/protocol/Params.h:17,
+                 from /home/hail/mvfst/mvfst/_build/deps/include/fizz/record/RecordLayer.h:11,
+                 from /home/hail/mvfst/mvfst/_build/deps/include/fizz/protocol/Actions.h:13,
+                 from /home/hail/mvfst/mvfst/_build/deps/include/fizz/client/Actions.h:12,
+                 from /home/hail/mvfst/mvfst/_build/deps/include/fizz/client/ClientProtocol.h:11,
+                 from /home/hail/mvfst/mvfst/_build/deps/include/fizz/client/AsyncFizzClient.h:12,
+                 from /home/hail/mvfst/mvfst/_build/deps/include/fizz/client/test/Mocks.h:11,
+                 from /home/hail/mvfst/mvfst/quic/server/handshake/test/ServerHandshakeTest.cpp:15:
+/home/hail/mvfst/mvfst/_build/deps/include/folly/io/async/EventBase.h:353:3: note: declared here
+   loopIgnoreKeepAlive();
+   ^~~~~~~~~~~~~~~~~~~
+/home/hail/mvfst/mvfst/quic/server/handshake/test/ServerHandshakeTest.cpp: At global scope:
+/home/hail/mvfst/mvfst/quic/server/handshake/test/ServerHandshakeTest.cpp:435:3: error: ‘folly::Future<std::pair<fizz::PskType, folly::Optional<fizz::server::ResumptionState> > > quic::test::AsyncRejectingTicketCipher::decrypt(std::unique_ptr<folly::IOBuf>, const fizz::server::State*) const’ marked ‘override’, but does not override
+   decrypt(
+   ^~~~~~~
+/home/hail/mvfst/mvfst/quic/server/handshake/test/ServerHandshakeTest.cpp:755:5: error: ‘folly::Future<std::pair<fizz::PskType, folly::Optional<fizz::server::ResumptionState> > > quic::test::ServerHandshakeZeroRttDefaultAppTokenValidatorTest::AcceptingTicketCipher::decrypt(std::unique_ptr<folly::IOBuf>, const fizz::server::State*) const’ marked ‘override’, but does not override
+     decrypt(
+     ^~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/c++/7/bits/c++allocator.h:33:0,
+                 from /usr/include/c++/7/bits/allocator.h:46,
+                 from /usr/include/c++/7/string:41,
+                 from /home/hail/mvfst/mvfst/_build/build/googletest/src/googletest/googlemock/include/gmock/gmock-actions.h:44,
+                 from /home/hail/mvfst/mvfst/_build/build/googletest/src/googletest/googlemock/include/gmock/gmock.h:58,
+                 from /home/hail/mvfst/mvfst/quic/server/handshake/test/ServerHandshakeTest.cpp:9:
+/usr/include/c++/7/ext/new_allocator.h: In instantiation of ‘void __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = quic::test::AsyncRejectingTicketCipher; _Args = {}; _Tp = quic::test::AsyncRejectingTicketCipher]’:
+/usr/include/c++/7/bits/alloc_traits.h:475:4:   required from ‘static void std::allocator_traits<std::allocator<_Tp> >::construct(std::allocator_traits<std::allocator<_Tp> >::allocator_type&, _Up*, _Args&& ...) [with _Up = quic::test::AsyncRejectingTicketCipher; _Args = {}; _Tp = quic::test::AsyncRejectingTicketCipher; std::allocator_traits<std::allocator<_Tp> >::allocator_type = std::allocator<quic::test::AsyncRejectingTicketCipher>]’
+/usr/include/c++/7/bits/shared_ptr_base.h:526:39:   required from ‘std::_Sp_counted_ptr_inplace<_Tp, _Alloc, _Lp>::_Sp_counted_ptr_inplace(_Alloc, _Args&& ...) [with _Args = {}; _Tp = quic::test::AsyncRejectingTicketCipher; _Alloc = std::allocator<quic::test::AsyncRejectingTicketCipher>; __gnu_cxx::_Lock_policy _Lp = (__gnu_cxx::_Lock_policy)2]’
+/usr/include/c++/7/bits/shared_ptr_base.h:637:4:   required from ‘std::__shared_count<_Lp>::__shared_count(std::_Sp_make_shared_tag, _Tp*, const _Alloc&, _Args&& ...) [with _Tp = quic::test::AsyncRejectingTicketCipher; _Alloc = std::allocator<quic::test::AsyncRejectingTicketCipher>; _Args = {}; __gnu_cxx::_Lock_policy _Lp = (__gnu_cxx::_Lock_policy)2]’
+/usr/include/c++/7/bits/shared_ptr_base.h:1295:35:   required from ‘std::__shared_ptr<_Tp, _Lp>::__shared_ptr(std::_Sp_make_shared_tag, const _Alloc&, _Args&& ...) [with _Alloc = std::allocator<quic::test::AsyncRejectingTicketCipher>; _Args = {}; _Tp = quic::test::AsyncRejectingTicketCipher; __gnu_cxx::_Lock_policy _Lp = (__gnu_cxx::_Lock_policy)2]’
+/usr/include/c++/7/bits/shared_ptr.h:344:64:   required from ‘std::shared_ptr<_Tp>::shared_ptr(std::_Sp_make_shared_tag, const _Alloc&, _Args&& ...) [with _Alloc = std::allocator<quic::test::AsyncRejectingTicketCipher>; _Args = {}; _Tp = quic::test::AsyncRejectingTicketCipher]’
+/usr/include/c++/7/bits/shared_ptr.h:690:14:   required from ‘std::shared_ptr<_Tp> std::allocate_shared(const _Alloc&, _Args&& ...) [with _Tp = quic::test::AsyncRejectingTicketCipher; _Alloc = std::allocator<quic::test::AsyncRejectingTicketCipher>; _Args = {}]’
+/usr/include/c++/7/bits/shared_ptr.h:706:39:   required from ‘std::shared_ptr<_Tp> std::make_shared(_Args&& ...) [with _Tp = quic::test::AsyncRejectingTicketCipher; _Args = {}]’
+/home/hail/mvfst/mvfst/quic/server/handshake/test/ServerHandshakeTest.cpp:562:64:   required from here
+/usr/include/c++/7/ext/new_allocator.h:136:4: error: invalid new-expression of abstract class type ‘quic::test::AsyncRejectingTicketCipher’
+  { ::new((void *)__p) _Up(std::forward<_Args>(__args)...); }
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/hail/mvfst/mvfst/quic/server/handshake/test/ServerHandshakeTest.cpp:401:7: note:   because the following virtual functions are pure within ‘quic::test::AsyncRejectingTicketCipher’:
+ class AsyncRejectingTicketCipher : public fizz::server::TicketCipher {
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/hail/mvfst/mvfst/_build/deps/include/fizz/server/FizzServerContext.h:19:0,
+                 from /home/hail/mvfst/mvfst/_build/deps/include/fizz/server/FizzServer.h:12,
+                 from /home/hail/mvfst/mvfst/_build/deps/include/fizz/server/AsyncFizzServer.h:13,
+                 from /home/hail/mvfst/mvfst/_build/deps/include/fizz/server/test/Mocks.h:17,
+                 from /home/hail/mvfst/mvfst/quic/server/handshake/test/ServerHandshakeTest.cpp:19:
+/home/hail/mvfst/mvfst/_build/deps/include/fizz/server/TicketCipher.h:39:3: note: 	virtual folly::Future<std::pair<fizz::PskType, folly::Optional<fizz::server::ResumptionState> > > fizz::server::TicketCipher::decrypt(std::unique_ptr<folly::IOBuf>) const
+   decrypt(std::unique_ptr<folly::IOBuf> encryptedTicket) const = 0;
+   ^~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/c++/7/bits/c++allocator.h:33:0,
+                 from /usr/include/c++/7/bits/allocator.h:46,
+                 from /usr/include/c++/7/string:41,
+                 from /home/hail/mvfst/mvfst/_build/build/googletest/src/googletest/googlemock/include/gmock/gmock-actions.h:44,
+                 from /home/hail/mvfst/mvfst/_build/build/googletest/src/googletest/googlemock/include/gmock/gmock.h:58,
+                 from /home/hail/mvfst/mvfst/quic/server/handshake/test/ServerHandshakeTest.cpp:9:
+/usr/include/c++/7/ext/new_allocator.h: In instantiation of ‘void __gnu_cxx::new_allocator<_Tp>::construct(_Up*, _Args&& ...) [with _Up = quic::test::ServerHandshakeZeroRttDefaultAppTokenValidatorTest::AcceptingTicketCipher; _Args = {}; _Tp = quic::test::ServerHandshakeZeroRttDefaultAppTokenValidatorTest::AcceptingTicketCipher]’:
+/usr/include/c++/7/bits/alloc_traits.h:475:4:   required from ‘static void std::allocator_traits<std::allocator<_Tp> >::construct(std::allocator_traits<std::allocator<_Tp> >::allocator_type&, _Up*, _Args&& ...) [with _Up = quic::test::ServerHandshakeZeroRttDefaultAppTokenValidatorTest::AcceptingTicketCipher; _Args = {}; _Tp = quic::test::ServerHandshakeZeroRttDefaultAppTokenValidatorTest::AcceptingTicketCipher; std::allocator_traits<std::allocator<_Tp> >::allocator_type = std::allocator<quic::test::ServerHandshakeZeroRttDefaultAppTokenValidatorTest::AcceptingTicketCipher>]’
+/usr/include/c++/7/bits/shared_ptr_base.h:526:39:   required from ‘std::_Sp_counted_ptr_inplace<_Tp, _Alloc, _Lp>::_Sp_counted_ptr_inplace(_Alloc, _Args&& ...) [with _Args = {}; _Tp = quic::test::ServerHandshakeZeroRttDefaultAppTokenValidatorTest::AcceptingTicketCipher; _Alloc = std::allocator<quic::test::ServerHandshakeZeroRttDefaultAppTokenValidatorTest::AcceptingTicketCipher>; __gnu_cxx::_Lock_policy _Lp = (__gnu_cxx::_Lock_policy)2]’
+/usr/include/c++/7/bits/shared_ptr_base.h:637:4:   required from ‘std::__shared_count<_Lp>::__shared_count(std::_Sp_make_shared_tag, _Tp*, const _Alloc&, _Args&& ...) [with _Tp = quic::test::ServerHandshakeZeroRttDefaultAppTokenValidatorTest::AcceptingTicketCipher; _Alloc = std::allocator<quic::test::ServerHandshakeZeroRttDefaultAppTokenValidatorTest::AcceptingTicketCipher>; _Args = {}; __gnu_cxx::_Lock_policy _Lp = (__gnu_cxx::_Lock_policy)2]’
+/usr/include/c++/7/bits/shared_ptr_base.h:1295:35:   required from ‘std::__shared_ptr<_Tp, _Lp>::__shared_ptr(std::_Sp_make_shared_tag, const _Alloc&, _Args&& ...) [with _Alloc = std::allocator<quic::test::ServerHandshakeZeroRttDefaultAppTokenValidatorTest::AcceptingTicketCipher>; _Args = {}; _Tp = quic::test::ServerHandshakeZeroRttDefaultAppTokenValidatorTest::AcceptingTicketCipher; __gnu_cxx::_Lock_policy _Lp = (__gnu_cxx::_Lock_policy)2]’
+/usr/include/c++/7/bits/shared_ptr.h:344:64:   required from ‘std::shared_ptr<_Tp>::shared_ptr(std::_Sp_make_shared_tag, const _Alloc&, _Args&& ...) [with _Alloc = std::allocator<quic::test::ServerHandshakeZeroRttDefaultAppTokenValidatorTest::AcceptingTicketCipher>; _Args = {}; _Tp = quic::test::ServerHandshakeZeroRttDefaultAppTokenValidatorTest::AcceptingTicketCipher]’
+/usr/include/c++/7/bits/shared_ptr.h:690:14:   required from ‘std::shared_ptr<_Tp> std::allocate_shared(const _Alloc&, _Args&& ...) [with _Tp = quic::test::ServerHandshakeZeroRttDefaultAppTokenValidatorTest::AcceptingTicketCipher; _Alloc = std::allocator<quic::test::ServerHandshakeZeroRttDefaultAppTokenValidatorTest::AcceptingTicketCipher>; _Args = {}]’
+/usr/include/c++/7/bits/shared_ptr.h:706:39:   required from ‘std::shared_ptr<_Tp> std::make_shared(_Args&& ...) [with _Tp = quic::test::ServerHandshakeZeroRttDefaultAppTokenValidatorTest::AcceptingTicketCipher; _Args = {}]’
+/home/hail/mvfst/mvfst/quic/server/handshake/test/ServerHandshakeTest.cpp:780:59:   required from here
+/usr/include/c++/7/ext/new_allocator.h:136:4: error: invalid new-expression of abstract class type ‘quic::test::ServerHandshakeZeroRttDefaultAppTokenValidatorTest::AcceptingTicketCipher’
+  { ::new((void *)__p) _Up(std::forward<_Args>(__args)...); }
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/hail/mvfst/mvfst/quic/server/handshake/test/ServerHandshakeTest.cpp:731:9: note:   because the following virtual functions are pure within ‘quic::test::ServerHandshakeZeroRttDefaultAppTokenValidatorTest::AcceptingTicketCipher’:
+   class AcceptingTicketCipher : public fizz::server::TicketCipher {
+         ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/hail/mvfst/mvfst/_build/deps/include/fizz/server/FizzServerContext.h:19:0,
+                 from /home/hail/mvfst/mvfst/_build/deps/include/fizz/server/FizzServer.h:12,
+                 from /home/hail/mvfst/mvfst/_build/deps/include/fizz/server/AsyncFizzServer.h:13,
+                 from /home/hail/mvfst/mvfst/_build/deps/include/fizz/server/test/Mocks.h:17,
+                 from /home/hail/mvfst/mvfst/quic/server/handshake/test/ServerHandshakeTest.cpp:19:
+/home/hail/mvfst/mvfst/_build/deps/include/fizz/server/TicketCipher.h:39:3: note: 	virtual folly::Future<std::pair<fizz::PskType, folly::Optional<fizz::server::ResumptionState> > > fizz::server::TicketCipher::decrypt(std::unique_ptr<folly::IOBuf>) const
+   decrypt(std::unique_ptr<folly::IOBuf> encryptedTicket) const = 0;
+   ^~~~~~~
+cc1plus: warning: unrecognized command line option ‘-Wno-inconsistent-missing-override’
+make[2]: *** [quic/server/handshake/test/CMakeFiles/ServerHandshakeTest.dir/ServerHandshakeTest.cpp.o] Error 1
+make[1]: *** [quic/server/handshake/test/CMakeFiles/ServerHandshakeTest.dir/all] Error 2
+make: *** [all] Error 2
